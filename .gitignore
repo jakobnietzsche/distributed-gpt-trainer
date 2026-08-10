@@ -1,0 +1,7 @@
+build/
+__pycache__/
+*.py[cod]
+*.egg-info/
+runs/
+.DS_Store
+roadmap.md
