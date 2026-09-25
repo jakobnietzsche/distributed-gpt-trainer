@@ -14,3 +14,6 @@ dev = [
     "ruff",
     "pyright",
 ]
+
+[tool.setuptools.package-data]
+dgpt = ["resources/*.txt"]

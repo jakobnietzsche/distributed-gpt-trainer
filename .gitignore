@@ -4,4 +4,3 @@ __pycache__/
 *.egg-info/
 runs/
 .DS_Store
-roadmap.md

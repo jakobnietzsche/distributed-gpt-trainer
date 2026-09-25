@@ -11,12 +11,12 @@ class EventLogger:
     Stores events for metrics and debugging.
     """
 
-    def __init__(self, run_directory: str, run_id: str):
-        run_directory = Path(run_directory) / run_id
-        run_directory.mkdir(parents=True, exist_ok=True)
+    def __init__(self, run_directory: str, run_id: str, rank: int):
+        run_path = Path(run_directory) / run_id
+        run_path.mkdir(parents=True, exist_ok=True)
 
-        log_path = run_directory / "events.jsonl"
-        self.log_file = log_path.open(mode="w", encoding="utf-8")
+        log_path = run_path / f"events_{rank}.jsonl"
+        self.log_file = log_path.open(mode="a", encoding="utf-8")
 
     def log_event(self, event: Event) -> None:
         event_data = asdict(event)
